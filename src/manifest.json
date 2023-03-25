@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Article Helper",
     "manifest_version": 3,
+    "author": "Paul Wiskw",
     "action":{
         "default_popup": "index.html",
         "default_title": "Article Helper"
