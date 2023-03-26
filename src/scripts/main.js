@@ -1,49 +1,114 @@
-function testFunction() {
-    let text = document.getElementById("bodypart").value.toLowerCase();
-    document.getElementById("bodypart").value = "";
+// function testFunction() {
+//     let text = document.getElementById("bodypart").value.toLowerCase();
+//     document.getElementById("bodypart").value = "";
 
-    returnWorkouts(text);
+//     returnWorkouts(text);
+// }
+
+let armWorkout = ["Bicep curls", "Tricep pulldown", "Skull Crusher"];
+let legWorkout = ["Squat", "Deadlift", "Lunges"];
+let backWorkout = ["Lat Pulldowns", "Pull-ups", "Rows"];
+let chestWorkout = ["Bench press", "Incline press", "Cable Flies"];
+let fullWorkout = [];
+
+let arm = false;
+let leg = false;
+let back = false;
+let chest = false;
+
+function returnArms() {
+    arm = !arm;
+
+    if (arm) {
+        fullWorkout.push(armWorkout);
+    } else {
+        fullWorkout.splice(armWorkout)
+    }
 }
 
-function returnWorkouts(input) {
-    const armWorkout = ["Bicep curls", "Tricep pulldown"];
-    const legWorkout = ["Squat", "Deadlift", "Lunges"];
-    const backWorkout = ["Lat Pulldowns", "Pull-ups", "Rows"];
-    const chestWorkout = ["Bench press", "Incline press", "Cable Flies"];
+function returnLegs() {
+    leg = !leg;
 
-    if (input == "arms") {
-        writeFromArray(armWorkout);
-    } else if (input == "legs") {
-        writeFromArray(legWorkout);
-    } else if (input == "back") {
-        writeFromArray(backWorkout);
-    } else if (input == "chest") {
-        writeFromArray(chestWorkout);
+    if (leg) {
+        fullWorkout.push(legWorkout);
     } else {
-        returnError();
+        fullWorkout.splice(legWorkout);
     }
+}
 
+function returnBack() {
+    back = !back;
+
+    if (back) {
+        fullWorkout.push(backWorkout);
+    } else {
+        fullWorkout.splice(backWorkout)
+    }
+}
+
+function returnChest() {
+    chest = !chest;
+
+    if (chest) {
+        fullWorkout.push(chestWorkout);
+    } else {
+        fullWorkout.splice(chestWorkout);
+    }
+}
+
+function generate() {
+    writeFromArray(fullWorkout);
+    reset();
 }
 
 function writeFromArray(arr) {
+    const numOfWorkouts = 2;
     const para = document.createElement("p");
-    let text = "";
 
-    for (let i = 0; i < arr.length - 1; i++) {
-        text += arr[i] + ", "
+    if (arr.length == 1) {
+        for (let i = 0; i < arr[0].length; i++) {
+            let text = arr[0][i] + "\n";
+            const node = document.createTextNode(text);
+            para.appendChild(node);
+            para.innerHTML += "<br>";
+        }
+    } else if (arr.length > 1) {
+        for (let i = 0; i < arr.length; i ++) {
+            for (let j = 0; j < numOfWorkouts; j++) {  
+                // let index = Math.floor(Math.random() * arr[i].length);
+                let text = arr[i][j];
+
+                // arr[i].splice(index,index)
+
+                const node = document.createTextNode(text);
+                para.appendChild(node);
+                para.innerHTML += "<br>";
+            }
+        }
     }
 
-    text += arr[arr.length - 1];
-
-    const node = document.createTextNode(text);
-    para.appendChild(node);
-
     const div = document.getElementById("output");
-    div.innerHTML = "";
-    div.appendChild(para);
+    if (div.innerHTML === "") {
+        div.appendChild(para);
+    }
+
+    armWorkout = ["Bicep curls", "Tricep pulldown", "Skull Crusher"];
+    legWorkout = ["Squat", "Deadlift", "Lunges"];
+    backWorkout = ["Lat Pulldowns", "Pull-ups", "Rows"];
+    chestWorkout = ["Bench press", "Incline press", "Cable Flies"];
 }
 
-function returnError() {
-    const div = document.getElementById("output");
-    div.innerHTML = "<p>Please enter a valid input.</p>";
+function clearDiv() {
+    const div1 = document.getElementById("output");
+    div1.innerHTML = "";
+    reset();
+}
+
+function reset() {
+    arm = false;
+    leg = false;
+    chest = false;
+    back = false;
+
+    fullWorkout = [];
 }

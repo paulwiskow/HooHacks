@@ -13,12 +13,14 @@
         <h1 class="motive">ACTIVE</h1>
         <h1 class="motive">ATHLETIC</h1>
         <h1></h1>
-        <label for="bodypart">Bodypart (Please enter either:  Arms, Legs, Chest, or Back):</label><br>
-        <input type="text" id="bodypart" name="bodypart"><br>
-        <button onclick="testFunction()">Submit</button><br>
+        <label for="bodypart">Bodypart</label><br>
+        <label onclick="returnArms()">Arms</label>
+        <label onclick="returnLegs()">Legs</label>
+        <label onclick="returnChest()">Chest</label>
+        <label onclick="returnBack()">Back</label><br>
+        <label onclick="generate()">Generate</label>
+        <label onclick="clearDiv()">Clear</label>
 
-        <div id="output">
-            
-        </div>
+        <div id="output"></div>
     </body>
 </html>
