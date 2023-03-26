@@ -5,6 +5,11 @@ background-image: radial-gradient(#86927d 0.5px, #dde6d0 0.5px);
 background-size: 10px 10px;
 }
 
+body, html { 
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
+
 .hero {
     font-family: 'IBM Plex Sans', sans-serif; 
     font-weight: 800;
@@ -18,7 +23,7 @@ background-size: 10px 10px;
     height: 100%;
     margin: 0;
     left: 305px;
-    line-height: 933px;
+    line-height: 910px;
     text-align: left;
    
     animation: example2 0.75s ease-out;
@@ -34,6 +39,51 @@ background-size: 10px 10px;
    
     animation: example3 1.25s ease-out;
    }
+#bodypart {
+    opacity:0;
+}
+#arms {
+    opacity:0;
+}
+#legs {
+    opacity:0;
+}
+#chest {
+    opacity:0;
+}
+#back {
+    opacity:0;
+}
+#generate {
+    opacity:0;
+}
+#clear {
+    opacity:0;
+}
+#start {
+    display: inline-block;
+    position: absolute;
+    left: 850px;
+    top:850px;
+    font-size: 80px;
+    font-family: 'IBM Plex Sans', sans-serif; 
+    background-color: transparent;
+}
+
+#bodypart,
+#arms,
+#legs,
+#chest,
+#back,
+#generate,
+#clear {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+h1 {
+  transition: opacity 1s;
+}
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -54,5 +104,7 @@ background-size: 10px 10px;
     transform: translateY(0%); 
     }
    }
+
+
 
    
