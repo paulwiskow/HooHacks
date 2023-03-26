@@ -47,3 +47,4 @@ function returnError() {
     const div = document.getElementById("output");
     div.innerHTML = "<p>Please enter a valid input.</p>";
 }
+
