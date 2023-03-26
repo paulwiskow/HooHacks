@@ -34,7 +34,7 @@ background-size: 10px 10px;
    
     animation: example3 1.25s ease-out;
    }
-@-webkit-keyframes fadein {
+@keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
@@ -53,6 +53,6 @@ background-size: 10px 10px;
     100% { 
     transform: translateY(0%); 
     }
-   }
+}
 
    

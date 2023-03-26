@@ -1,10 +1,3 @@
-// function testFunction() {
-//     let text = document.getElementById("bodypart").value.toLowerCase();
-//     document.getElementById("bodypart").value = "";
-
-//     returnWorkouts(text);
-// }
-
 let armWorkout = ["Bicep curls", "Tricep pulldown", "Skull Crusher"];
 let legWorkout = ["Squat", "Deadlift", "Lunges"];
 let backWorkout = ["Lat Pulldowns", "Pull-ups", "Rows"];
@@ -21,8 +14,6 @@ function returnArms() {
 
     if (arm) {
         fullWorkout.push(armWorkout);
-    } else {
-        fullWorkout.splice(armWorkout)
     }
 }
 
@@ -31,8 +22,6 @@ function returnLegs() {
 
     if (leg) {
         fullWorkout.push(legWorkout);
-    } else {
-        fullWorkout.splice(legWorkout);
     }
 }
 
@@ -41,8 +30,6 @@ function returnBack() {
 
     if (back) {
         fullWorkout.push(backWorkout);
-    } else {
-        fullWorkout.splice(backWorkout)
     }
 }
 
@@ -51,8 +38,6 @@ function returnChest() {
 
     if (chest) {
         fullWorkout.push(chestWorkout);
-    } else {
-        fullWorkout.splice(chestWorkout);
     }
 }
 
