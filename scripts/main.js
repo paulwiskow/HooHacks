@@ -1,14 +1,7 @@
-// function testFunction() {
-//     let text = document.getElementById("bodypart").value.toLowerCase();
-//     document.getElementById("bodypart").value = "";
-
-//     returnWorkouts(text);
-// }
-
-let armWorkout = ["Bicep curls", "Tricep pulldown", "Skull crusher"];
+let armWorkout = ["Bicep curls", "Tricep pulldown", "Skull Crusher"];
 let legWorkout = ["Squat", "Deadlift", "Lunges"];
-let backWorkout = ["Lat pulldowns", "Pull-ups", "Rows"];
-let chestWorkout = ["Bench press", "Incline press", "Cable flies"];
+let backWorkout = ["Lat Pulldowns", "Pull-ups", "Rows"];
+let chestWorkout = ["Bench press", "Incline press", "Cable Flies"];
 let fullWorkout = [];
 
 let arm = false;
@@ -16,18 +9,11 @@ let leg = false;
 let back = false;
 let chest = false;
 
-window.onload = () => {
-    const startButton = document.getElementById("start");
-    setTimeout(() => { startButton.style.opacity = '1'; }, 1500);
-}
-
 function returnArms() {
     arm = !arm;
 
     if (arm) {
         fullWorkout.push(armWorkout);
-    } else {
-        fullWorkout.splice(armWorkout)
     }
 }
 
@@ -36,8 +22,6 @@ function returnLegs() {
 
     if (leg) {
         fullWorkout.push(legWorkout);
-    } else {
-        fullWorkout.splice(legWorkout);
     }
 }
 
@@ -46,8 +30,6 @@ function returnBack() {
 
     if (back) {
         fullWorkout.push(backWorkout);
-    } else {
-        fullWorkout.splice(backWorkout)
     }
 }
 
@@ -56,8 +38,6 @@ function returnChest() {
 
     if (chest) {
         fullWorkout.push(chestWorkout);
-    } else {
-        fullWorkout.splice(chestWorkout);
     }
 }
 
@@ -93,11 +73,6 @@ function writeFromArray(arr) {
     }
 
     const div = document.getElementById("output");
-    div.style.textAlign = "center";
-    div.style.fontSize = "50px";
-    div.style.fontFamily = "'IBM Plex Sans', sans-serif";
-    div.style.position = "relative";
-    div.style.top = "-100px";
     if (div.innerHTML === "") {
         div.appendChild(para);
     }

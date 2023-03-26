@@ -14,16 +14,14 @@
     <body>
         <h1 class="hero">WE HELP YOU <i id="stay">STAY</i> <i id="active">ACTIVE</i></h1>
 
-            <label id="bodypart" for="bodypart">Bodypart</label><br>
-            <label id="arms" onclick="returnArms()">Arms</label>
-            <label id="legs" onclick="returnLegs()">Legs</label>
-            <label id="chest" onclick="returnChest()">Chest</label>
-            <label id="back" onclick="returnBack()">Back</label><br>
-            <label id="generate" onclick="generate()">Generate</label>
-            <label id="clear" onclick="clearDiv()">Clear</label>
-        <button id="start" onclick="document.querySelectorAll('#bodypart, #arms, #legs, #chest, #back, #generate, #clear').forEach(el => el.style.opacity = '1'); document.querySelector('h1').style.opacity = '0'">Start</button>
-
-        <div id="output"></div>
+        <label id="bodypart" for="bodypart">Bodypart</label><br>
+        <label id="arms" onclick="returnArms()">Arms</label>
+        <label id="legs" onclick="returnLegs()">Legs</label>
+        <label id="chest" onclick="returnChest()">Chest</label>
+        <label id="back" onclick="returnBack()">Back</label><br>
+        <label id="generate" onclick="generate()">Generate</label>
+        <label id="clear" onclick="clearDiv()">Clear</label>
+        <button id="start" style="transition: opacity 1s;" onclick="document.querySelectorAll('#bodypart, #arms, #legs, #chest, #back, #generate, #clear').forEach(el => el.style.opacity = '1'); document.querySelector('h1').style.opacity = '0'; this.style.opacity = '0'">Start</button>        <div id="output"></div>
 
         
     </body>

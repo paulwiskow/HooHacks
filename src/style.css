@@ -1,3 +1,8 @@
+#start {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
 body {
     background-color: #dde6d0;
 opacity: 0.8;
@@ -17,6 +22,7 @@ body, html {
     text-align:center;
     animation: fadein 0.5s ease-out;
 }
+
 #stay{
     position: absolute;
     width: 100%;
@@ -26,8 +32,9 @@ body, html {
     line-height: 910px;
     text-align: left;
    
-    animation: example2 0.75s ease-out;
+    animation: right_flyin 0.75s ease-out;
 }
+
 #active {
     position: absolute;
     width: 100%;
@@ -37,33 +44,13 @@ body, html {
     top: 468px;
     text-align: left;
    
-    animation: example3 1.25s ease-out;
-   }
-#bodypart {
-    opacity:0;
+    animation: bottom_flyin 1.25s ease-out;
 }
-#arms {
-    opacity:0;
-}
-#legs {
-    opacity:0;
-}
-#chest {
-    opacity:0;
-}
-#back {
-    opacity:0;
-}
-#generate {
-    opacity:0;
-}
-#clear {
-    opacity:0;
-}
+
 #start {
     display: inline-block;
     position: absolute;
-    left: 850px;
+    left: 945px;
     top:850px;
     font-size: 80px;
     font-family: 'IBM Plex Sans', sans-serif; 
@@ -77,18 +64,59 @@ body, html {
 #back,
 #generate,
 #clear {
+    display:inline-block;
+    position:absolute;
   opacity: 0;
   transition: opacity 1s;
+  font-size: 80px;
+  font-family: 'IBM Plex Sans', sans-serif; 
+}
+
+#bodypart{
+    left:870px;
+    top:100px;
+}
+
+#arms {
+    left: 350px;
+    top:250px;
+}
+
+#legs {
+    left: 750px;
+    top:250px;
+}
+
+#chest {
+    left: 1150px;
+    top:250px;
+}
+
+#back {
+    left: 1550px;
+    top:250px;
+}
+
+#generate {
+    left: 585px;
+    top:420px;
+}
+
+#clear {
+    left: 1152px;
+    top:420px;
 }
 
 h1 {
   transition: opacity 1s;
 }
+
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-@keyframes example2 {
+
+@keyframes right_flyin {
     0%   { 
     transform: translateX(300%); 		
     }
@@ -96,14 +124,15 @@ h1 {
     transform: translateX(0%); 
     }
 }
-@keyframes example3 {
+
+@keyframes bottom_flyin {
     0%   { 
     transform: translateY(900%); 		
     }
     100% { 
     transform: translateY(0%); 
     }
-   }
+}
 
 
 
